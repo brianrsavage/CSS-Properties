@@ -22,6 +22,16 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col">
+                    <p><strong>CSS Visibility vs Display</strong></p>
+                    <p>The display and visibility CSS properties appear to be the same thing, but they are in fact quite different and often confuse those new to web development.</p>
+                    <ul>
+                        <li><code>visibility: hidden;</code> hides the element, but it still takes up space in the layout. Child element of a hidden box will be visible if their visibility is set to visible.</li>
+                        <li><code>display: none;</code> turns off the display and removes the element completely from the document. It does not take up any space, even though the HTML for it is still in the source code. All child elements also have
+                            their display turned off, even if their display property is set to something other than none.</li>
+                    </ul>
+
+                </div>
+                <div class="col">
                     <div class="card ml-auto mr-auto" style="width: 18rem;">
                         <img id="imageID" class="card-img-top" src="https://via.placeholder.com/286x180/" alt="Card image cap">
                         <div class="card-body">
@@ -37,28 +47,29 @@
         </div>
         <script async type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script async type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>        <script>
-          function toggleImgvis() {
-            var image = document.getElementById('imageID');
-            if (image.style.visibility == "hidden") {
-              image.style.visibility = "visible";
-            } else {
-              image.style.visibility = "hidden";
+        <script async type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+            function toggleImgvis() {
+                var image = document.getElementById('imageID');
+                if (image.style.visibility == "hidden") {
+                    image.style.visibility = "visible";
+                } else {
+                    image.style.visibility = "hidden";
+                }
             }
-          }
 
-          function toggleImgdis() {
-            var image = document.getElementById('imageID');
-            if (image.style.display == "none") {
-              image.style.display = "block";
-            } else {
-              image.style.display = "none";
+            function toggleImgdis() {
+                var image = document.getElementById('imageID');
+                if (image.style.display == "none") {
+                    image.style.display = "block";
+                } else {
+                    image.style.display = "none";
+                }
             }
-          }
 
-          $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-          });
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
         </script>
     </body>
 
