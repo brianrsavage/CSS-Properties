@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Display - Visibility Properties 001</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <style>
+            .card {
+                margin-top: 16px;
+            }
+
+            .btn {
+                margin: 8px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <div class="card ml-auto mr-auto" style="width: 18rem;">
+                        <img id="imageID" class="card-img-top" src="https://via.placeholder.com/286x180/" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Visibility Property Demo</h5>
+                            <p class="card-text">Using the CSS visibility property, the element is not removed from the document flow as it would be if display were set to none.</p>
+                            <a href="#" class="btn btn-primary" onclick="toggleImgvis()">Toggle Image visibility</a>
+                            <a href="#" class="btn btn-primary" onclick="toggleImgdis()">Toggle Image Display Property</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script async type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script async type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>        <script>
+          function toggleImgvis() {
+            var image = document.getElementById('imageID');
+            if (image.style.visibility == "hidden") {
+              image.style.visibility = "visible";
+            } else {
+              image.style.visibility = "hidden";
+            }
+          }
+
+          function toggleImgdis() {
+            var image = document.getElementById('imageID');
+            if (image.style.display == "none") {
+              image.style.display = "block";
+            } else {
+              image.style.display = "none";
+            }
+          }
+
+          $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+          });
+        </script>
+    </body>
+
+</html>
