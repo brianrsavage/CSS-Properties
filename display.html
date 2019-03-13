@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Display Property</title>
+    <style>
+body {
+  font-family: sans-serif;
+  margin: auto;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  padding: 1em;
+  border: 2px solid grey;
+}
+
+table {
+  border-collapse: collapse;
+}
+th {
+  background-color: #ccc;
+  padding: 1em;
+  border: 1px solid black;
+  white-space: nowrap;
+}
+td {
+  border: 1px solid black;
+}
+.rules-table td {
+  padding: 0.5em;
+}
+
+.examples-table {
+  table-layout: fixed;
+}
+.examples-table td:nth-child(2) {
+  width: 30em;
+}
+.examples-table td:nth-child(1) {
+  padding-left: 1em;
+}
+
+pre {
+  color: blue;
+}
+span {
+  background-color: rgba(0, 0, 255, 0.5);
+  border: 3px solid orange;
+  padding: 0.5em;
+  margin: 1em;
+}
+
+    </style>
+</head>
+<body>
+<div class="row">
+  <div class="col">
+    <h2> Compare CSS "display" Property Values </h2>
+    <hr>
+    <table class="rules-table">
+      <thead>
+        <tr>
+          <th><i>Behavior</i></th>
+          <th>inline</th>
+          <th>inline-block</th>
+          <th>block</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Respects left/right padding</td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+        </tr>
+        <tr>
+          <td>Respects left/right margin</td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+        </tr>
+        <tr>
+          <td>Respects top/bottom padding</td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+        </tr>
+        <tr>
+          <td>Respects top/bottom margin</td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">❌</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png" ios-version="6.0">✅</g-emoji>
+          </td>
+        </tr>
+        <tr>
+          <td>Default width is width of its container (not width of its contents)</td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">❌</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png" ios-version="6.0">❌</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png" ios-version="6.0">✅</g-emoji>
+          </td>
+        </tr>
+        <tr>
+          <td>Forces a line break (does not allow elements to sit beside it)</td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">❌</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png" ios-version="6.0">❌</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png" ios-version="6.0">✅</g-emoji>
+          </td>
+        </tr>
+        <tr>
+          <td>Respects height/width when specified</td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">❌</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="white_check_mark" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2705.png" ios-version="6.0">✅</g-emoji>
+          </td>
+          <td>
+            <g-emoji alias="x" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/274c.png" ios-version="6.0">✅</g-emoji>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <h2> Examples </h2>
+    <hr> In all examples below, the text "commodo consequat" is contained within a span tag which has the following CSS properties:
+    <b><pre>
+background-color: rgba(0,0,255,0.5); /* translucent blue */
+border: 3px solid orange;
+padding: 0.5em;
+margin: 1em;
+</pre></b>
+    <table class="examples-table">
+      <tr>
+        <th>
+          Additional CSS Properties
+        </th>
+        <th>
+          Result
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+display: inline;</pre>
+        </td>
+        <td>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span style="display: inline;">commodo consequat</span>.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+display: inline-block;</pre>
+        </td>
+        <td>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span style="display: inline-block;">commodo consequat</span>.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+display: block;</pre>
+        </td>
+        <td>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span style="display: block;">commodo consequat</span>.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+display: inline;
+height: 3em; 
+width: 15em;</pre>
+        </td>
+        <td>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span style="display: inline;  height: 3em; width: 15em;">commodo consequat</span>.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+display: inline-block;
+height: 3em;
+width: 15em;
+</pre>
+        </td>
+        <td>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span style="display: inline-block;  height: 3em; width: 15em;">commodo consequat</span>.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <pre>
+display: block;
+height: 3em; 
+width: 15em;</pre>
+        </td>
+        <td>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span style="display: block; height: 3em; width: 15em;">commodo consequat</span>.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
